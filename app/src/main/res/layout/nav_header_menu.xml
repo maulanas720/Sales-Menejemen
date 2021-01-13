@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="@dimen/nav_header_height"
-    android:background="@drawable/ture"
+    android:background="@drawable/navhead"
     android:gravity="bottom"
     android:orientation="vertical"
     android:paddingBottom="@dimen/activity_vertical_margin"
@@ -15,27 +15,35 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="98dp"
+        android:layout_marginTop="10dp"
+        android:layout_gravity="left"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
-        android:paddingRight="180dp"
-        app:srcCompat="@drawable/lagi" />
+        app:srcCompat="@drawable/ppp" />
+
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/txtusername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:fontFamily="@font/leter"
-        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:paddingLeft="20dp"
         android:paddingTop="@dimen/nav_header_vertical_spacing"
         android:text="Android Studio"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="#DC6C6C6C"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/leter"
+        android:layout_gravity="center"
+        android:textColor="#DC6C6C6C"
         android:textStyle="bold"
+        android:paddingLeft="20dp"
         android:text="android.studio@android.com" />
 
 </LinearLayout>

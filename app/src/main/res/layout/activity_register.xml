@@ -6,31 +6,54 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/hm">
+    android:background="@drawable/ssca">
 
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:text="SAMEN"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp" />
 
+    <TextView
+        android:layout_width="230dp"
+        android:layout_height="30dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="0dp"
+        android:text="SALES MANAGEMENT"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#90737373"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/edituser"
         android:layout_width="230dp"
-        android:layout_gravity="center"
-        android:hint="@string/username"
-        android:textColor="@color/hitam"
-        android:textSize="15sp"
         android:layout_height="40dp"
-        android:layout_marginTop="160dp"
-        />
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="#9CFFFFFF"
+        android:hint="@string/username"
+        android:paddingLeft="10sp"
+        android:textColor="@color/hitam"
+        android:textSize="15sp" />
 
     <EditText
         android:id="@+id/editemail"
         android:layout_width="230dp"
         android:layout_gravity="center"
-
+        android:background="#9CFFFFFF"
         android:hint="@string/email"
         android:textColor="@color/hitam"
         android:textSize="15sp"
         android:layout_height="40dp"
         android:layout_marginTop="10dp"
+        android:paddingLeft="10sp"
 
         />
 
@@ -38,12 +61,13 @@
         android:id="@+id/editpassword"
         android:layout_width="230dp"
         android:layout_gravity="center"
-
+        android:background="#9CFFFFFF"
         android:hint="@string/password"
         android:inputType="textPassword"
         android:textColor="@color/hitam"
         android:textSize="15sp"
         android:layout_height="40dp"
+        android:paddingLeft="10sp"
         android:layout_marginTop="10dp"
 
         />
@@ -52,6 +76,8 @@
         android:id="@+id/editkonfpass"
         android:layout_width="230dp"
         android:layout_gravity="center"
+        android:background="#9CFFFFFF"
+        android:paddingLeft="10sp"
         android:hint="@string/konfirmasi"
         android:inputType="textPassword"
         android:textColor="@color/hitam"
@@ -66,7 +92,7 @@
         android:layout_width="200dp"
         android:layout_height="40dp"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:textSize="20sp"
         android:background="@drawable/barunih"
         android:textStyle="bold"

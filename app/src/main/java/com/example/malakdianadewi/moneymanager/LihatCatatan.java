@@ -21,7 +21,7 @@ public class LihatCatatan extends AppCompatActivity {
     Cursor cursor;
     TextView text1, text2, text3, text4, text5, text6, text7;
     private SessionManagement sessionManagement;
-    String idtran ="", jenis="", jml= "", tanggal="", keterangan="",kategori="";
+    String idtran ="", jenis="", jml= "", tanggal="", keterangan="",kategori="", pembeli="", kuantitas="";
     Button del,upd,back;
     private ImageView imgnote;
 
@@ -37,6 +37,8 @@ public class LihatCatatan extends AppCompatActivity {
         text3 = (TextView) findViewById(R.id.mon);
         text4 = (TextView) findViewById(R.id.date);
         text5 = (TextView) findViewById(R.id.not);
+        text6 = (TextView) findViewById(R.id.pembeli);
+        text7 = (TextView) findViewById(R.id.kuantitas);
         imgnote = (ImageView) findViewById(R.id.imgnote);
         del = (Button) findViewById(R.id.delete);
         upd = (Button) findViewById(R.id.update);
@@ -63,12 +65,17 @@ public class LihatCatatan extends AppCompatActivity {
             kategori = cursor.getString(3).toString();
             jml = cursor.getString(5).toString();
             keterangan =  cursor.getString(6).toString();
+            pembeli = cursor.getString(7).toString();
+            kuantitas = cursor.getString(8).toString();
+
 
             text1.setText(cursor.getString(3).toString());
             text2.setText(cursor.getString(2).toString());
             text3.setText(cursor.getString(5).toString());
             text4.setText(cursor.getString(1).toString());
             text5.setText(cursor.getString(6).toString());
+            text6.setText(cursor.getString(7).toString());
+            text7.setText(cursor.getString(8).toString());
 
         }
 
@@ -83,6 +90,8 @@ public class LihatCatatan extends AppCompatActivity {
                 m.putExtra("jumlah", jml);
                 m.putExtra("tanggal", tanggal);
                 m.putExtra("keterangan",keterangan);
+                m.putExtra("pembeli",pembeli);
+                m.putExtra("kuantitas",kuantitas);
                 startActivity(m);
             }
         });

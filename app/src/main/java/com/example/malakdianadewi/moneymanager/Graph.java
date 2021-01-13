@@ -51,7 +51,7 @@ public class Graph extends AppCompatActivity {
             final HashMap<String, String> user = sessionManagement.getUserInformation(); 
 
             SQLiteDatabase db = dbcenter.getReadableDatabase();
-            cursor = db.rawQuery("SELECT SUM(jumlah) as total, kategori FROM transaksi WHERE id_user = '" + user.get(sessionManagement.KEY_ID_USER) + "' and jenis = 'Income' group by kategori", null);
+            cursor = db.rawQuery("SELECT SUM(kuantitas) as total, kategori FROM transaksi WHERE id_user = '" + user.get(sessionManagement.KEY_ID_USER) + "' and jenis = 'Income' group by kategori", null);
             cursor.moveToFirst();
 
             for (int cc = 0; cc < cursor.getCount(); cc++) {
@@ -60,15 +60,15 @@ public class Graph extends AppCompatActivity {
                 String kategori = cursor.getString(1).toString();
                 //agar warna berbeda , buat if else sehingga memiliki warna beda tiap indeks cursor
                 if (cc == 0) {
-                    pieData.add(new SliceValue(jumlah, Color.BLUE).setLabel(kategori+jumlah)); //atur warna dan teks
+                    pieData.add(new SliceValue(jumlah, Color.BLUE).setLabel(kategori+" ("+jumlah+")")); //atur warna dan teks
                 } else if (cc == 1) {
-                    pieData.add(new SliceValue(jumlah, Color.GRAY).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.GRAY).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 2) {
-                    pieData.add(new SliceValue(jumlah, Color.RED).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.RED).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 3) {
-                    pieData.add(new SliceValue(jumlah, Color.MAGENTA).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.MAGENTA).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 4) {
-                    pieData.add(new SliceValue(jumlah, Color.CYAN).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.CYAN).setLabel(kategori+" ("+jumlah+")"));
                 }
 
             }

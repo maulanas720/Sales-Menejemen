@@ -43,15 +43,15 @@ public class tambahCatatan extends AppCompatActivity {
     private SimpleDateFormat dateFormatter;
     private EditText tvDateResult;
     private Button btDatePicker;
-    EditText tanggal, keterangan, jumlah;
+    EditText tanggal, keterangan, jumlah, pembeli, kuantitas;
     String mCurrentPhotoPath;
     String jenis = "Income";
     SessionManagement sessionManagement;
     DatabaseHelper dbcenter;
 
 
-    private static final String[] pathIncome = {"Salary", "Bonus", "Allowance", "Petty cash", "Other"};
-    private static final String[] pathExpenses = {"Food", "Social Life", "Transportation", "Gift", "Healt", "Other"};
+    private static final String[] pathIncome = {"Basreng pedas", "Basreng asin", "Other"};
+    private static final String[] pathExpenses = {"Beli bahan", "Transportasi", "Other"};
     private final int versi = 1;
     private static final int CAMERA = 1;
     private static final int FILE = 2;
@@ -71,6 +71,8 @@ public class tambahCatatan extends AppCompatActivity {
         keterangan = (EditText) findViewById(R.id.edtnote);
         jumlah = (EditText) findViewById(R.id.edtjumlah);
         kategori = findViewById(R.id.spinnerCategory);
+        pembeli = (EditText) findViewById(R.id.pembeli);
+        kuantitas = (EditText) findViewById(R.id.kuantitas);
 
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -147,8 +149,8 @@ public class tambahCatatan extends AppCompatActivity {
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                dbcenter.addTransaksi(tanggal.getText().toString(), jenis, kategori.getSelectedItem().toString(), Integer.parseInt(user.get(sessionManagement.KEY_ID_USER)),
-                        Integer.parseInt(jumlah.getText().toString()),keterangan.getText().toString());
+                dbcenter.addTransaksi(tanggal.getText().toString() , jenis, kategori.getSelectedItem().toString(), Integer.parseInt(user.get(sessionManagement.KEY_ID_USER)),
+                        Integer.parseInt(jumlah.getText().toString()),keterangan.getText().toString(),pembeli.getText().toString(),kuantitas.getText().toString());
                 Intent m = new Intent(getApplicationContext(), menu.class);
                 startActivity(m);
 

@@ -32,7 +32,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
     Cursor cursor;
     private SessionManagement sessionManagement;
     RecyclerView rv;
-    private ArrayList<String> dataId,dataTanggal, dataKeterangan, dataJumlah;
+    private ArrayList<String> dataId,dataTanggal, dataJumlah, dataPembeli;
     DatabaseHelper dbcenter;
     String id="";
 
@@ -53,8 +53,8 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
 
         dataId = new ArrayList<>();
         dataTanggal = new ArrayList<>();
-        dataKeterangan=new ArrayList<>();
         dataJumlah = new ArrayList<>();
+        dataPembeli = new ArrayList<>();
 
 
         if(sessionManagement.isLoggedIn()) {
@@ -104,7 +104,7 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
         rv.setHasFixedSize(true);
         layoutManager = new LinearLayoutManager(this);
         rv.setLayoutManager(layoutManager);
-        adapter = new MyAdapter(dataId,dataTanggal,dataKeterangan,dataJumlah);
+        adapter = new MyAdapter(dataId,dataTanggal,dataPembeli,dataJumlah);
         rv.setAdapter(adapter);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -138,8 +138,8 @@ public class menu extends AppCompatActivity implements NavigationView.OnNavigati
             //masukkan data kedalam array
             dataId.add(cursor.getString(0).toString());
             dataTanggal.add(cursor.getString(1).toString());
-            dataKeterangan.add(cursor.getString(6).toString());
             dataJumlah.add(cursor.getString(5).toString());
+            dataPembeli.add(cursor.getString(7).toString());
         }
 
     }

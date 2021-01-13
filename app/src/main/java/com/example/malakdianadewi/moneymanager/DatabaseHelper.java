@@ -16,7 +16,7 @@ import java.util.List;
 public class DatabaseHelper extends SQLiteOpenHelper {
 
     //mendeklarasikan semua kolom yang diperlukan di datasabe
-    public static String DATABASE_NAME = "money_manager";
+    public static String DATABASE_NAME = "juals";
     private static final int DATABASE_VERSION = 1;
     private static final String TABLE_USER = "user";
     private static final String TABLE_TRANSAKSI= "transaksi";
@@ -30,6 +30,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_KATEGORI ="kategori";
     private static final String KEY_JENIS = "jenis";
     private static final String KEY_KETERANGAN = "keterangan";
+    private static final String KEY_PEMBELI = "pembeli";
+    private static final String KEY_KUANTITAS = "kuantitas";
 
     //mendeklarasikan perintah create tabel user untuk sqlite
     private static final String CREATE_TABLE_USER = "CREATE TABLE "
@@ -47,8 +49,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             + KEY_KATEGORI+ " TEXT,"
             + KEY_ID_USER+" INTEGER,"
             + KEY_JUMLAH+" INTEGER,"
-
-            + KEY_KETERANGAN+" TEXT );";
+            + KEY_KETERANGAN+" TEXT,"
+            + KEY_PEMBELI+" TEXT,"
+            + KEY_KUANTITAS+" INTEGER);";
 
 
     public DatabaseHelper(Context context) {
@@ -85,7 +88,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
 
     //method untuk menambah transaksi
-    public void addTransaksi(String tanggal, String jenis, String kategori, int id_user ,int jumlah, String keterangan) {
+    public void addTransaksi(String tanggal, String jenis, String kategori, int id_user , int jumlah, String keterangan, String pembeli, String kuantitas) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         ContentValues values = new ContentValues();
@@ -95,13 +98,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_ID_USER, id_user);
         values.put(KEY_JUMLAH,jumlah);
         values.put(KEY_KETERANGAN, keterangan);
+        values.put(KEY_PEMBELI, pembeli);
+        values.put(KEY_KUANTITAS, kuantitas);
 
 
         db.insert(TABLE_TRANSAKSI, null, values);
     }
 
     //method untuk update transaksi
-    public void updateTransaksi(int id, String tanggal, String jenis, String kategori, int id_user ,int jumlah, String keterangan) {
+    public void updateTransaksi(int id, String tanggal, String jenis, String kategori, int id_user , int jumlah, String keterangan, String pembeli, String kuantitas) {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_TANGGAL, tanggal);
@@ -110,12 +115,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         values.put(KEY_ID_USER, id_user);
         values.put(KEY_JUMLAH,jumlah);
         values.put(KEY_KETERANGAN, keterangan);
+        values.put(KEY_PEMBELI, pembeli);
+        values.put(KEY_KUANTITAS, kuantitas);
         db.update(TABLE_TRANSAKSI, values, KEY_ID_TRANSAKSI + " = ?", new String[]{String.valueOf(id)});
     }
-
-
-
-
-
 
 }

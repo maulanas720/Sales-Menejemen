@@ -12,6 +12,7 @@
         android:fontFamily="@font/leter"
         android:textStyle="bold"
         android:textColor="@color/putih"
+        android:paddingLeft="5sp"
         android:layout_height="20dp"
         android:text="2018-10-15"/>
     <TextView

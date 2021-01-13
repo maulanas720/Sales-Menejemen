@@ -3,7 +3,7 @@
     android:layout_height="match_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@drawable/nisasabyun">
+    android:background="@drawable/ssca">
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
@@ -63,7 +63,7 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="Date"
+                android:text="@string/date"
                 android:fontFamily="@font/leter"
                 android:textStyle="bold"
                 android:id="@+id/txtdate"
@@ -89,8 +89,29 @@
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="Category"
+                android:text="@string/namas"
                 android:layout_below="@id/txtdate"
+                android:id="@+id/txtpembeli"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:fontFamily="@font/leter"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                />
+            <EditText
+                android:layout_toRightOf="@id/txtjumlah"
+                android:layout_below="@id/txtdate"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:id="@+id/pembeli"
+                android:inputType="text"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/kategori"
+                android:layout_below="@id/txtpembeli"
                 android:id="@+id/txtkategori"
                 android:textAlignment="center"
                 android:gravity="center"
@@ -103,13 +124,35 @@
                 android:layout_width="230dp"
                 android:layout_height="40dp"
                 android:layout_toRightOf="@id/txtkategori"
-                android:layout_below="@id/txtdate"
+                android:layout_below="@id/txtpembeli"
                 />
+
             <TextView
                 android:layout_width="100dp"
                 android:layout_height="40dp"
-                android:text="Amount"
+                android:text="@string/kuantitas"
                 android:layout_below="@id/txtkategori"
+                android:id="@+id/txtkuantitas"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:fontFamily="@font/leter"
+                android:textStyle="bold"
+                android:textSize="18dp"
+                />
+            <EditText
+                android:layout_toRightOf="@id/txtjumlah"
+                android:layout_below="@id/txtkategori"
+                android:layout_width="200dp"
+                android:layout_height="40dp"
+                android:id="@+id/kuantitas"
+                android:inputType="number"
+                />
+
+            <TextView
+                android:layout_width="100dp"
+                android:layout_height="40dp"
+                android:text="@string/jumlah"
+                android:layout_below="@id/txtkuantitas"
                 android:id="@+id/txtjumlah"
                 android:textAlignment="center"
                 android:gravity="center"
@@ -119,7 +162,7 @@
                 />
             <EditText
                 android:layout_toRightOf="@id/txtjumlah"
-                android:layout_below="@id/txtkategori"
+                android:layout_below="@id/txtkuantitas"
                 android:layout_width="200dp"
                 android:layout_height="40dp"
                 android:id="@+id/edtjumlah"

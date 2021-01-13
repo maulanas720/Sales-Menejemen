@@ -2,17 +2,49 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/nisasabyun">
+    android:orientation="vertical"
+    android:background="@drawable/ssca">
 
-    <ImageView
-        android:src="@drawable/lagi"
-        android:layout_width="250dp"
-        android:layout_height="250dp"
-        android:layout_marginTop="140dp"
-        android:layout_marginBottom="160dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginRight="60dp"
-        android:scaleType="fitXY"/>
+    <TextView
+        android:id="@+id/judul"
+        android:layout_width="269dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_gravity="center"
+        android:layout_marginStart="72dp"
+        android:layout_marginLeft="72dp"
+        android:layout_marginTop="130dp"
+        android:layout_marginEnd="70dp"
+        android:layout_marginRight="70dp"
+        android:gravity="center"
+        android:text="SAMEN"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFFFFF"
+        android:textSize="60sp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/judul"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="87dp"
+        android:layout_marginLeft="87dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        android:text="SALES MANAGEMENT"
+        android:textAlignment="center"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#90737373"
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <ProgressBar
         android:id="@+id/progressBar1"

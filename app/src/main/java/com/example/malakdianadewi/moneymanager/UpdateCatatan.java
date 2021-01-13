@@ -31,7 +31,7 @@ public class UpdateCatatan extends AppCompatActivity {
     private SimpleDateFormat dateFormatter;
     private EditText tvDateResult;
     private Button btDatePicker , save;
-    EditText tanggal, keterangan, jumlah;
+    EditText tanggal, keterangan, jumlah, pembeli, kuantitas;
     String imageFilePath;
     String jenis = "Income";
     SessionManagement sessionManagement;
@@ -39,8 +39,8 @@ public class UpdateCatatan extends AppCompatActivity {
     Button back;
 
     //aray kategori dari income dan expenses
-    private static final String[] pathIncome = {"Salary", "Bonus", "Allowance", "Petty cash", "Other"};
-    private static final String[] pathExpenses = {"Food", "Social Life", "Transportation", "Gift", "Healt", "Other"};
+    private static final String[] pathIncome = {"Basreng Pedas", "Basreng Asin", "Other"};
+    private static final String[] pathExpenses = {"Beli Bahan", "Transportasi", "Other"};
     private final int versi = 1;
     String kat, id;
 
@@ -58,6 +58,8 @@ public class UpdateCatatan extends AppCompatActivity {
         keterangan = (EditText) findViewById(R.id.edtnote);
         jumlah = (EditText) findViewById(R.id.edtjumlah);
         kategori = findViewById(R.id.spinnerCategory);
+        pembeli = (EditText) findViewById(R.id.pembeli);
+        kuantitas = (EditText) findViewById(R.id.kuantitas);
         save = (Button)  findViewById(R.id.btnsave);
         back = findViewById(R.id.back);
         back.setOnClickListener(new View.OnClickListener() {
@@ -73,6 +75,8 @@ public class UpdateCatatan extends AppCompatActivity {
         jumlah.setText(getIntent().getStringExtra("jumlah"));
         keterangan.setText(getIntent().getStringExtra("keterangan"));
         kat = getIntent().getStringExtra("kategori");
+        pembeli.setText(getIntent().getStringExtra("pembeli"));
+        kuantitas.setText(getIntent().getStringExtra("kuantitas"));
         id = getIntent().getStringExtra("idTran");
         jenis = getIntent().getStringExtra("jenis");
 
@@ -186,7 +190,7 @@ public class UpdateCatatan extends AppCompatActivity {
             public void onClick(View v) {
 //menyimpan data hasil update catatan
                 dbcenter.updateTransaksi(Integer.parseInt(id),tanggal.getText().toString(), jenis, kategori.getSelectedItem().toString(), Integer.parseInt(user.get(sessionManagement.KEY_ID_USER)),
-                        Integer.parseInt(jumlah.getText().toString()), keterangan.getText().toString());
+                        Integer.parseInt(jumlah.getText().toString()), keterangan.getText().toString(), pembeli.getText().toString(), kuantitas.getText().toString());
                 Intent m = new Intent(getApplicationContext(), menu.class);
                 startActivity(m);
             }

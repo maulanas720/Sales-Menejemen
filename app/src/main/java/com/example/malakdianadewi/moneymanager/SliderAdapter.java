@@ -11,9 +11,6 @@ import android.widget.ImageView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import com.squareup.picasso.Picasso;
-/**
- * Created by Malak Diana Dewi on 13/12/2018.
- */
 
 public class SliderAdapter extends PagerAdapter {
     Context context;
@@ -25,24 +22,20 @@ public class SliderAdapter extends PagerAdapter {
 
 
 //menyimpan url untuk picaso untuk ditampilkan pada slide view
-    public String[] slide_image={
-            "https://img.icons8.com/color/1600/avatar.png",
-            "https://cdn.iconscout.com/icon/free/png-256/avatar-369-456321.png",
-            "http://2.bp.blogspot.com/-47EoU2cz1cg/UNSDP2ESFEI/AAAAAAAAISU/xwkN6d7TWHo/s320/LOGO+POLITEKNIK+NEGERI+MALANG.png"
+    public int[] slide_image={
+        R.drawable.samen
+
     };
 
     //menyimpan text untuk ditampilkan pada slide view
     public String[] slide_headings={
-            "Ferdiana R.C",
-            "Malak Diana D.",
-            "POLINEMA"
+            "SALES MANAGEMENT "
     };
 
     //menyimpan text untuk ditampilkan pada slide view
     public  String[] slide_descs = {
-            "Jika Anda benar-benar bisa menghitung uang Anda, maka Anda bukan orang kaya.",
-            "Waktu lebih berarti daripada uang. Anda dapat mendapatkan lebih banyak uang, tetapi Anda tidak dapat mendapatkan lebih banyak waktu.",
-            "Jl. Soekarno Hatta No.09, Jatimulyo, Kec. Lowokwaru, Kota Malang, Jawa Timur 65141"
+            "Merupakan aplikasi pengelolaan keungan usaha mikro kecil yang memiliki beberapa fitur penunjang seperti menyimpan dan menampilkan data pemasukan dan pengeluaran, Ubah dan hapus data, serta menyajika data kedalam bentuk diagram Pie chart"
+
     };
 
 

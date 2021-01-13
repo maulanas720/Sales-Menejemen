@@ -1,9 +1,5 @@
 package com.example.malakdianadewi.moneymanager;
 
-/**
- * Created by Malak Diana Dewi on 10/12/2018.
- */
-
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -51,6 +47,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 // - mengambil elemen dari dataset (ArrayList) pada posisi tertentu
 // - mengeset isi view dengan elemen dari dataset tersebut
         final String name = rvTgl.get(position);
+
         holder.tvTitle.setText(rvTgl.get(position));
         holder.tvSubtitle.setText(rvKet.get(position));
         holder.tvJum.setText(rvJml.get(position));

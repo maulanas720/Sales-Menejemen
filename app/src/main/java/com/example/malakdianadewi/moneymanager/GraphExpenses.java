@@ -58,17 +58,17 @@ public class GraphExpenses extends AppCompatActivity {
                 int jumlah = Integer.parseInt(cursor.getString(0).toString());
                 String kategori = cursor.getString(1).toString();
                 if (cc == 0) {
-                    pieData.add(new SliceValue(jumlah, Color.BLUE).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.BLUE).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 1) {
-                    pieData.add(new SliceValue(jumlah, Color.GRAY).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.GRAY).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 2) {
-                    pieData.add(new SliceValue(jumlah, Color.RED).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.RED).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 3) {
-                    pieData.add(new SliceValue(jumlah, Color.MAGENTA).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.MAGENTA).setLabel(kategori+" ("+jumlah+")"));
                 } else if (cc == 4) {
-                    pieData.add(new SliceValue(jumlah, Color.CYAN).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.CYAN).setLabel(kategori+" ("+jumlah+")"));
                 }else{
-                    pieData.add(new SliceValue(jumlah, Color.GREEN).setLabel(kategori+jumlah));
+                    pieData.add(new SliceValue(jumlah, Color.GREEN).setLabel(kategori+" ("+jumlah+")"));
                 }
 
             }
